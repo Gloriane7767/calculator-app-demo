@@ -7,6 +7,8 @@ public class CalculatorApp {
 
         while (true) {
             // get input
+            System.out.println("===== Welcome to My Calculator App =====");
+
             System.out.println("Enter first number:");
             double num1 = scanner.nextDouble();
 
@@ -49,12 +51,11 @@ public class CalculatorApp {
                 System.out.println("The result is: " + result);
 
                 // ask to continue
-                System.out.println("Do you want to perform another calculation? (yes/no):");
-                String again = scanner.next();
-                if (again.equalsIgnoreCase("yes")) {
-                    }else{
-                        System.out.println("Thank you for using the calculator!");
-                        break;
+                System.out.println("Do you want to perform another calculation? (y/n):");
+                char again = scanner.next().charAt(0);
+            if (!again.equalsIgnoreCase("y")) {
+                System.out.println("Thank you for using the calculator!");
+                break;
                     }
                 }
                 scanner.close();
