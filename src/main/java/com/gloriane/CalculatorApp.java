@@ -47,7 +47,16 @@ public class CalculatorApp {
             }
                 // show result
                 System.out.println("The result is: " + result);
+
+                // ask to continue
+                System.out.println("Do you want to perform another calculation? (yes/no):");
+                String again = scanner.next();
+                if (again.equalsIgnoreCase("yes")) {
+                    }else{
+                        System.out.println("Thank you for using the calculator!");
+                        break;
+                    }
+                }
                 scanner.close();
             }
         }
-    }
