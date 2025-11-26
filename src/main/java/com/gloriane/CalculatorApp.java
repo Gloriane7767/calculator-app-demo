@@ -6,46 +6,48 @@ public class CalculatorApp {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-        // get input
-        System.out.println("Enter first number:");
-        double num1 = scanner.nextDouble();
+            // get input
+            System.out.println("Enter first number:");
+            double num1 = scanner.nextDouble();
 
-        System.out.println("Enter second number:");
-        double num2 = scanner.nextDouble();
+            System.out.println("Enter second number:");
+            double num2 = scanner.nextDouble();
 
-        System.out.println("Select operation (+, -, *, /):");
-        String operation = scanner.next();
-        };
-        double result = 0;
-        
-    // switch statement for calculation
-        switch(operation) {
-            case "+":
-                result = num1 + num2;
-                break;
+            System.out.println("Select operation (+, -, *, /):");
+            String operation = scanner.next();
 
-            case "-":
-                result = num1 - num2;
-                break;
+            double result = 0;
 
-            case "*":
-                result = num1 * num2;
-                break;
+            // switch statement for calculation
+            switch (operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
 
-            case "/":
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    System.out.println("Error: Division by zero is not allowed.");
+                case "-":
+                    result = num1 - num2;
+                    break;
+
+                case "*":
+                    result = num1 * num2;
+                    break;
+
+                case "/":
+                    if (num2 != 0) {
+                        result = num1 / num2;
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                        return;
+                    }
+                    break;
+
+                default:
+                    System.out.println("Error: Invalid operation.");
                     return;
-                }
-                break;
-
-            default:
-                System.out.println("Error: Invalid operation.");
-                return;
+            }
+                // show result
+                System.out.println("The result is: " + result);
+                scanner.close();
+            }
         }
-        System.out.println("The result is: " + result);
-        scanner.close();
     }
-}
