@@ -115,7 +115,7 @@ The user is welcomed and prompted to enter:
 
 * The second number (or more numbers, if supported)
 
-* The operator (´+`, `-`, `*`, `/`)
+* The operator (`+`, `-`, `*`, `/`)
 
 
 2️⃣ Perform the calculation
@@ -183,7 +183,7 @@ Buttons for digits \& operations
 
 2. Ask the user to enter two numbers
 
-3. Ask the user which operation they want (´+`, `-`, `*`, `/`)
+3. Ask the user which operation they want (`+`, `-`, `*`, `/`)
 
 4. Perform the chosen operation
 
