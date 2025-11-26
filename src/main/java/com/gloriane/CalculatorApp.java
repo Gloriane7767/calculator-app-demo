@@ -16,6 +16,13 @@ public class CalculatorApp {
 
         double result = 0;
 
+        // Perform calculation based on the selected operation
+        switch (operation) {
+            case " + ":
+                result = num1 + num2;
+                break;
+        }
+
 
     }
 }
