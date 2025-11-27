@@ -9,11 +9,11 @@ public class CalculatorApp {
             // get input
             System.out.println("===== Welcome to My Calculator App =====");
 
-            // System.out.println("Enter first number:");
-            // double num1 = scanner.nextDouble();
+            //System.out.println("Enter first number:");
+            //double num1 = scanner.nextDouble();
 
-            // System.out.println("Enter second number:");
-            // double num2 = scanner.nextDouble();
+            //System.out.println("Enter second number:");
+            //double num2 = scanner.nextDouble();
 
             System.out.println("Select operation (+, -, *, /):");
             String operation = scanner.next();
@@ -34,41 +34,37 @@ public class CalculatorApp {
                 System.out.println("Enter next number:");
                 double nextNum = scanner.nextDouble();
 
-            // switch statement for calculation
-            switch (operation) {
-                case "+":
-                    //result = num1 + num2;
-                    result += nextNum;
-                    break;
+                try {
+                    // switch statement for calculation
+                    switch (operation) {
+                        case "+":
+                            result += nextNum;
+                            break;
 
-                case "-":
-                    //result = num1 - num2;
-                    result -= nextNum;
-                    break;
+                        case "-":
+                            result -= nextNum;
+                            break;
 
-                case "*":
-                    //result = num1 * num2;
-                    result *= nextNum;
-                    break;
+                        case "*":
+                            result *= nextNum;
+                            break;
 
-                case "/":
-                    //if (num2 != 0) {
-                        //result = num1 / num2;
-                    if (nextNum != 0) {
-                        result /= nextNum;
-                    } else {
-                        System.out.println("Error: Division by zero is not allowed.");
-                        return;
+                        case "/":
+                            if (nextNum == 0) {
+                                throw new IllegalArgumentException("Division by zero is not allowed");
+                            }
+                            result /= nextNum;
+                            break;
+
+                        default:
+                            throw new IllegalArgumentException("Invalid operation: " + operation);
                     }
-                    break;
-
-                default:
-                    System.out.println("Error: Invalid operation.");
-                    return;
-            }
-                // show result
-               // System.out.println("The result is: " + result);
-                System.out.println("Current result is: " + result);
+                    // show result
+                    System.out.println("Current result is: " + result);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Error: " + e.getMessage());
+                    continue;
+                }
             }
 
             System.out.println("Final result is: " + result);
